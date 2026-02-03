@@ -8,3 +8,5 @@ der bei jedem Neustart die neuesten Plugin-Builds von einem Jenkins-Server zieht
 2. Starte AMP neu oder klicke auf "Refresh Templates".
 3. Erstelle eine neue Instanz vom Typ "Jenkins Minecraft".
 4. Trage die Jenkins URL und den Jobnamen in den Einstellungen ein.
+5. Hinterlege deine Plugin-Liste im Format `Job:Artifact[:Output]` (Komma oder Zeilenumbruch getrennt).
+   - Beispiel: `PluginJob:target/my-plugin.jar:my-plugin.jar`

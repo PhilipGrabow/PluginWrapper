@@ -18,6 +18,12 @@
       "Default": "MyPluginProject"
     },
     {
+      "Name": "PluginList",
+      "Description": "Liste der Plugins im Format Job:Artifact[:Output], getrennt durch Komma oder Zeilenumbruch",
+      "InputType": "Text",
+      "Default": "MyPluginProject:target/my-plugin.jar:my-plugin.jar"
+    },
+    {
       "Name": "ServerJar",
       "Description": "Name der Minecraft JAR Datei",
       "InputType": "Text",
@@ -36,6 +42,7 @@
   "EnvironmentVariables": {
     "JENKINS_URL": "{{JenkinsURL}}",
     "JENKINS_JOB": "{{JenkinsJob}}",
+    "PLUGIN_LIST": "{{PluginList}}",
     "SERVER_JAR": "{{ServerJar}}",
     "MEMORY": "{{MemoryMB}}"
   }
