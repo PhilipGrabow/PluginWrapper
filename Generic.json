@@ -1,0 +1,42 @@
+{
+  "Identifier": "JenkinsMinecraft",
+  "Name": "Minecraft with Jenkins Sync",
+  "Author": "DeinName",
+  "Description": "Lädt vor jedem Start Plugins von Jenkins.",
+  "AppType": "Generic",
+  "Variables": [
+    {
+      "Name": "JenkinsURL",
+      "Description": "Die Basis-URL zu deinem Jenkins",
+      "InputType": "Text",
+      "Default": "https://jenkins.deine-domain.de"
+    },
+    {
+      "Name": "JenkinsJob",
+      "Description": "Name des Jenkins Jobs",
+      "InputType": "Text",
+      "Default": "MyPluginProject"
+    },
+    {
+      "Name": "ServerJar",
+      "Description": "Name der Minecraft JAR Datei",
+      "InputType": "Text",
+      "Default": "paper.jar"
+    },
+    {
+      "Name": "MemoryMB",
+      "Description": "Maximaler Arbeitsspeicher in MB",
+      "InputType": "Number",
+      "Default": 4096
+    }
+  ],
+  "Executable": "/bin/bash",
+  "Arguments": ["./boot.sh"],
+  "WorkingDirectory": "./minecraft",
+  "EnvironmentVariables": {
+    "JENKINS_URL": "{{JenkinsURL}}",
+    "JENKINS_JOB": "{{JenkinsJob}}",
+    "SERVER_JAR": "{{ServerJar}}",
+    "MEMORY": "{{MemoryMB}}"
+  }
+}
